@@ -1,5 +1,6 @@
 const express = require("express");
 const cors = require("cors");
+const path = require('path');
 
 const PORT = process.env.PORT || 3000;
 
@@ -18,7 +19,9 @@ app.use(express.static("./client/dist/client"));
 app.use("/api", api);
 
 app.get("*", (req, res) => {
-    res.sendFile(__dirname + "./client/dist/client/index.html");
+    // res.sendFile(__dirname + "/client/dist/client/index.html");
+    console.log(path.join(__dirname, 'client/dist/client', 'index.html'));
+    res.sendFile(path.join(__dirname, 'client/dist/client', 'index.html'))
 });
 
 app.listen(PORT, function() {
