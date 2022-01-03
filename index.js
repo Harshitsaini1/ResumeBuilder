@@ -18,7 +18,7 @@ app.use(express.static("./client/dist/client"));
 app.use("/api", api);
 
 app.get("*", (req, res) => {
-    res.sendFile(__dirname + "/client/dist/client/index.html");
+    res.sendFile(__dirname + "./client/dist/client/index.html");
 });
 
 app.listen(PORT, function() {
