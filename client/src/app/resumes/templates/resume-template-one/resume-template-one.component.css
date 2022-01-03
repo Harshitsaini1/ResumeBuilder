@@ -1,0 +1,27 @@
+.bgleft {
+    background-color: #e2e2e2;
+    color: 494a45;
+}
+
+.bgright {
+    background-color: #494a45;
+    color: #e2e2e2;
+}
+
+.myimg {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.new-line {
+    white-space: pre-line;
+}
+
+.card-header {
+    background-color: #aeb38b;
+    color: black;
+}
+
+.card-body {
+    color: #494a45;
+}

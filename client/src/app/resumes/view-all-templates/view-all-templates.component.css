@@ -1,0 +1,8 @@
+.template {
+    width: 40%;
+}
+
+.template:hover {
+    width: 45%;
+    cursor: pointer;
+}

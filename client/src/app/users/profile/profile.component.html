@@ -1,0 +1,25 @@
+<div class="row pt-5">
+  <div class="col-md-6 mx-auto">
+    <div *ngIf="!user.verified" class="alert alert-danger">
+      <h2>
+        Mobile is not verified! Click here to verify now
+        <a routerLink="/users/edit">here</a>
+      </h2>
+    </div>
+    <div class="card rounded-0">
+      <div class="card-header">
+        <h3 class="mb-0">
+          User Profile
+          <div class="verified mt-2">
+            <h6 *ngIf="user.verified">Verified Account</h6>
+          </div>
+        </h3>
+      </div>
+      <div class="card-body">
+        <h5 class="card-title">Hello {{ user.username }}</h5>
+        <p class="card-text">Email: {{ user.email }}</p>
+        <p class="card-text">Mobile: {{ user.mobile }}</p>
+      </div>
+    </div>
+  </div>
+</div>

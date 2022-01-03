@@ -1,0 +1,16 @@
+.body {
+    background-color: #e2e2e2;
+}
+
+.background {
+    background-color: #86e1fc;
+}
+
+.myimg {
+    border-radius: 50%;
+    width: 200px;
+}
+
+.new-line {
+    white-space: pre-line;
+}

@@ -1,0 +1,115 @@
+<div id="resume" class="container body mt-3">
+  <div class="row">
+    <div class="col-md-3 py-5 background">
+      <div class="text-center">
+        <img
+          [src]="resumeData?.profile"
+          alt="profile image"
+          class="img-fluid myimg mb-2"
+        />
+
+        <p>{{ resumeData?.position }}</p>
+      </div>
+      <p class="text-break"><strong>Email:</strong> {{ resumeData?.email }}</p>
+      <p><strong>Contact No.:</strong> {{ resumeData?.mobile }}</p>
+      <p class="new-line">
+        <strong>Address:</strong> {{ resumeData?.address }}
+      </p>
+
+      <hr />
+      <h4>Skills</h4>
+      <ul>
+        <li *ngFor="let skill of resumeData?.skills">{{ skill }}</li>
+      </ul>
+      <hr />
+
+      <h4>Social Links</h4>
+      <div class="text-break">
+        <p><strong>LinkedIn:</strong> {{ resumeData?.linkedin }}</p>
+        <p><strong>Facebook:</strong> {{ resumeData?.facebook }}</p>
+        <p><strong>Instagram:</strong> {{ resumeData?.instagram }}</p>
+      </div>
+      <hr />
+
+      <h4>Languages</h4>
+      <ul>
+        <li *ngFor="let language of resumeData?.languages">{{ language }}</li>
+      </ul>
+    </div>
+    <div class="col-md-9 py-5">
+      <p class="text-center display-1 fw-bolder">{{ resumeData?.fullname }}</p>
+      <div class="card mt-4">
+        <div class="card-header background">
+          <h3>Objective</h3>
+        </div>
+        <div class="card-body">
+          <p>
+            {{ resumeData?.objective }}
+          </p>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header background">
+          <h3>Work Experience</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li
+              class="new-line mt-2"
+              *ngFor="let exp of resumeData?.experience"
+            >
+              {{ exp }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header background">
+          <h3>Projects</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li class="new-line mt-2" *ngFor="let pro of resumeData?.project">
+              {{ pro }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header background">
+          <h3>Certifications</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li
+              class="new-line mt-2"
+              *ngFor="let cer of resumeData?.certification"
+            >
+              {{ cer }}
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="card mt-4">
+        <div class="card-header background">
+          <h3>Education</h3>
+        </div>
+        <div class="card-body">
+          <ul>
+            <li class="new-line mt-2" *ngFor="let edu of resumeData?.education">
+              {{ edu }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container text-center mb-3">
+  <button (click)="download()" class="btn btn-primary btn-lg">Download</button>
+</div>

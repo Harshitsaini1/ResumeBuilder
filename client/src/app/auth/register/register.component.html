@@ -1,0 +1,125 @@
+<div class="container">
+  <div class="row pt-5">
+    <div class="col-md-6 mx-auto">
+      <div class="card rounded-0">
+        <div class="card-header">
+          <h3 class="mb-0">Register</h3>
+        </div>
+        <div class="card-body">
+          <form #f="ngForm" (ngSubmit)="registerUser(f.value)" class="form">
+            <div class="form-group">
+              <label for="emailInput">Email</label>
+              <input
+                required
+                ngModel
+                id="emailInput"
+                name="email"
+                #email="ngModel"
+                type="email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                class="form-control rounded-0"
+              />
+              <div
+                *ngIf="email.touched && email.invalid"
+                class="alert alert-danger"
+              >
+                <div *ngIf="email.errors?.required">Email is required.</div>
+                <div *ngIf="email.errors?.pattern">
+                  This is not a valid Email!!!
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="usernameInput">Username</label>
+              <input
+                required
+                minlength="4"
+                ngModel
+                id="usernameInput"
+                name="username"
+                #username="ngModel"
+                type="text"
+                class="form-control rounded-0"
+              />
+              <div
+                *ngIf="username.touched && username.invalid"
+                class="alert alert-danger"
+              >
+                <div *ngIf="username.errors?.required">
+                  Username is required.
+                </div>
+                <div *ngIf="username.errors?.minlength">
+                  Username should be at least
+                  {{ username.errors?.minlength?.requiredLength }} characters.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="passwordInput">Password</label>
+              <input
+                required
+                minlength="6"
+                ngModel
+                id="passwordInput"
+                name="password"
+                #password="ngModel"
+                type="password"
+                class="form-control rounded-0"
+              />
+              <div
+                *ngIf="password.touched && password.invalid"
+                class="alert alert-danger"
+              >
+                <div *ngIf="password.errors?.required">
+                  Password is required.
+                </div>
+                <div *ngIf="password.errors?.minlength">
+                  Password should be at least
+                  {{ password.errors?.minlength?.requiredLength }} characters.
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="confirmPasswordInput">Confirm Password</label>
+              <input
+                required
+                minlength="6"
+                ngModel
+                id="confirmPasswordInput"
+                name="confirmPassword"
+                #confirmPassword="ngModel"
+                type="text"
+                class="form-control rounded-0"
+              />
+              <div
+                *ngIf="confirmPassword.touched && confirmPassword.invalid"
+                class="alert alert-danger"
+              >
+                <div *ngIf="confirmPassword.errors?.required">
+                  Confirm Password is required.
+                </div>
+                <div *ngIf="confirmPassword != password">
+                  Password and Confirm Password should match.
+                </div>
+              </div>
+            </div>
+            <button class="btn btn-primary float-right" [disabled]="f.invalid">
+              Register
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <!-- <div class="col-md-6 mx-auto">
+        <div class="hide-md-lg">
+            <p>Or</p>
+        </div>
+        <button class="google btn1" type="button" (click)="signupWithGoogle()">
+      Signup with Google
+    </button>
+        <button class="facebook btn1" type="button" (click)="signupWithFacebook()">
+      Signup with Facebook
+    </button>
+    </div> -->
+  </div>
+</div>
