@@ -13,7 +13,7 @@ app.use(cors());
 
 app.use(express.json());
 
-app.use(express.static("client/dist/client"));
+app.use(express.static("./client/dist/client"));
 
 app.use("/api", api);
 
