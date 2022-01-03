@@ -133,7 +133,8 @@ exports.forgot = function (req, res) {
           id: user._id,
         };
         const token = jwt.sign(payload, secret, { expiresIn: "15m" });
-        const link = `http://localhost:4200/reset-password/${user._id}/${token}`;
+         const link = `https://harshitresumebuilder.herokuapp.com/${user._id}/${token}`;
+        // const link = `http://localhost:4200/reset-password/${user._id}/${token}`;
        
         // console.log(link);
         const message = {
@@ -202,80 +203,3 @@ exports.reset = async function (req, res) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- // const link = `https://vp-saurabh.herokuapp.com/reset-password/${user._id}/${token}`;
